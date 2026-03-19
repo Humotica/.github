@@ -190,6 +190,4 @@ Current hardware is sufficient. 5G latency under 1ms. Local inference on consume
 
 Humotica builds open infrastructure for trust between humans and AI. Founded by Jasper van de Meent.
 
-W3C Invited Expert — Verifiable Credentials Working Group (2025)
-
 **Website:** [humotica.com](https://humotica.com)
