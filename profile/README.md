@@ -1,5 +1,7 @@
 # Humotica
 
+> Audit is not an observation. It is a precondition.
+
 **Open protocols for continuous trust, identity and verification.**
 
 Four protocols that capture, park, validate and resume state as a continuum. Evidence-based. Local-first. No cloud dependency.
