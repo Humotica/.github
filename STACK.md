@@ -142,7 +142,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | Family | Canonical | Alias | Role |
 |---|---|---|---|
 | Sealed-object | `tibet-zip-*` 2.2.0 | `tbz-*` | block-format / JIS-binding / airlock / mirror |
-| Zero-trust knowledge | `tibet-cortex-*` 0.3.0 | `cortex-*` 0.2.0 *(yank pending)* | core / jis / store / airlock / audit / cli |
+| Zero-trust knowledge | `tibet-cortex-*` 0.3.0 | `cortex-*` 0.2.0 ~~(yanked 2026-05-29)~~ | core / jis / store / airlock / audit / cli |
 | Runtime / memory | `tibet-trust-kernel` 1.0.1-alpha · `tibet-store-mmu` 0.1.0 · `tibet-dgx` 0.2.0 | — | encrypted-RAM / MMU / QUIC (below-public-API) |
 
 `tibet-trust-kerneld` (the daemon built from [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel)) is the **production hardened runtime** — the bolle api beneath the Python platte api.
