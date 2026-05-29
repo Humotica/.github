@@ -190,7 +190,7 @@ Think of this repository as a set of labeled boxes.
 | 🔧 **Specialized Modules** | Domain adapters and edge cases | [`tibet-cobol`](https://pypi.org/project/tibet-cobol/), [`tibet-pqc`](https://pypi.org/project/tibet-pqc/), [`tibet-y2k38`](https://pypi.org/project/tibet-y2k38/), [`sensory`](https://pypi.org/project/sensory/), [`rapid-rag`](https://pypi.org/project/rapid-rag/), `oomllama` |
 | ✅ **Conformance** | Test vectors and public verification | [`tibet-conformance-vectors`](https://pypi.org/project/tibet-conformance-vectors/) |
 
-See [`STACK.md`](./STACK.md) for the canonical package map (114 packages, 110 with stack-position-footer).
+See [`STACK.md`](https://github.com/Humotica/.github/blob/main/STACK.md) for the canonical package map (114 packages, 110 with stack-position-footer).
 
 ---
 
@@ -200,12 +200,12 @@ See [`STACK.md`](./STACK.md) for the canonical package map (114 packages, 110 wi
 
 Read these in order:
 
-1. [`STACK.md`](./STACK.md) — canonical package map
-2. [`docs/stack-position-map.yml`](./docs/stack-position-map.yml) — every package's place in the chain
-3. [`packages/ainternet/README.md`](./packages/ainternet/) — the agent-network layer
-4. [`packages/tibet-continuityd/README.md`](./packages/tibet-continuityd/) — the arrival daemon
-5. [`packages/tibet-triage/README.md`](./packages/tibet-triage/) — preflight + Airlock + UPIP
-6. [`packages/tibet-phantom/README.md`](./packages/tibet-phantom/) — session resume across machines
+1. [`STACK.md`](https://github.com/Humotica/.github/blob/main/STACK.md) — canonical package map
+2. [`docs/stack-position-map.yml`](https://github.com/Humotica/.github/blob/main/docs/stack-position-map.yml) — every package's place in the chain
+3. [`packages/ainternet/README.md`](https://github.com/Humotica/.github/blob/main/packages/ainternet/README.md) — the agent-network layer
+4. [`packages/tibet-continuityd/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-continuityd/README.md) — the arrival daemon
+5. [`packages/tibet-triage/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-triage/README.md) — preflight + Airlock + UPIP
+6. [`packages/tibet-phantom/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-phantom/README.md) — session resume across machines
 
 ### 🚀 If You Want To Run Something
 
