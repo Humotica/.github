@@ -106,17 +106,17 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | Package | Versie | Tests | Rol |
 |---|---|---|---|
 | [`tibet-triage`](https://pypi.org/project/tibet-triage/) | 0.5.1 | ✓ | airlock-exec/UPIP/fork/flare — preflight + execution-isolation |
-| [`tibet-airlock`](https://pypi.org/project/tibet-airlock/) | 0.2.0 | ✓ | microVM-sandbox (execution-airlock layer) |
+| [`tibet-airlock`](https://pypi.org/project/tibet-airlock/) | **0.3.0** 🆕 | ✓ | Python operator-surface + posture enforcer (raises AirlockPostureDenied before I/O) |
 | [`tibet-gateway`](https://pypi.org/project/tibet-gateway/) | 0.4.0 | ✓ | sovereign proxy + TIBET-provenance |
-| [`tibet-pol`](https://pypi.org/project/tibet-pol/) | 0.3.2 | ✓ | process-checksum/health |
-| [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) | **0.1.2** 🆕 | ✓ | command/event-substrate — `gateway-event.v1` **frozen** ✅; OSAPI ↔ cap-bus bridge + 8 cmail-event fixtures |
+| [`tibet-pol`](https://pypi.org/project/tibet-pol/) | **0.3.3** 🆕 | ✓ | process-checksum/health + airlock-runtime observer (verdict.v1 emit-side) |
+| [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) | **0.1.3** 🆕 | ✓ | command/event-substrate — `gateway-event.v1` **frozen** ✅ + `airlock_runtime_verdict.v1` contract + `verdict_transitions` posture-event builder |
 
 ## 8. Safety / Firewall
 
 | Package | Versie | Tests | Rol |
 |---|---|---|---|
-| [`snaft`](https://pypi.org/project/snaft/) | 1.3.0 | ✓ | semantic firewall (22 OWASP-rules, NullRouteMux) |
-| [`tibet-snaft`](https://pypi.org/project/tibet-snaft/) | 1.3.0 | ✗ | alias of `snaft` |
+| [`snaft`](https://pypi.org/project/snaft/) | **1.4.0** 🆕 | ✓ | semantic firewall + airlock-runtime posture consumer + posture-aware rules + SNAFT-DESTRUCT-001 |
+| [`tibet-snaft`](https://pypi.org/project/tibet-snaft/) | **1.4.0** 🆕 | ✗ | alias of `snaft` |
 | [`inject-bender`](https://pypi.org/project/inject-bender/) | 0.3.0 | — | inject-detection (planned snaft-v2 `allow_iff` precondition layer) |
 
 *Crate:* `snaft-core` 0.3.1 (Rust backend for Python `snaft`, **not a separate product**).
