@@ -143,7 +143,8 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 |---|---|---|---|
 | Sealed-object | `tibet-zip-*` 2.2.0 | `tbz-*` | block-format / JIS-binding / airlock / mirror |
 | Zero-trust knowledge | `tibet-cortex-*` 0.3.0 | `cortex-*` 0.2.0 **(yanked 2026-05-29)** | core / jis / store / airlock / audit / cli |
-| Runtime / memory | `tibet-trust-kernel` 1.0.1-alpha · `tibet-store-mmu` 0.1.0 · `tibet-dgx` 0.2.0 | — | encrypted-RAM / MMU / QUIC (below-public-API) |
+| Runtime / memory | `tibet-trust-kernel` 1.0.1-alpha · `tibet-airlock-kernel` 0.2.0 · `tibet-store-mmu` 0.1.0 · `tibet-dgx` 0.2.0 | — | encrypted-RAM / MMU / QUIC (below-public-API) · airlock-kernel = bolle execution layer beneath PyPI `tibet-airlock` operator |
+| Identity (Rust) | `jis-core` 0.4.0-beta.1 (synced with PyPI v0.4.0b1) · `snaft-core` 0.3.1 | — | Ed25519 identity-kernel · Rust backend van Python `snaft` |
 
 `tibet-trust-kerneld` (the daemon built from `tibet-trust-kernel`) is the **production hardened runtime** — the bolle api beneath the Python platte api. See above (trust-kernel crate link).
 
