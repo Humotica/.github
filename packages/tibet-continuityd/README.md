@@ -619,4 +619,4 @@ Designed by [Jasper van de Meent](https://github.com/jaspertvdm). Built by Jaspe
 
 ---
 
-**Stack-positie:** Groep `evidence` · Bootstrap = OSAPI-handshake naar [`tibet`](https://pypi.org/project/tibet-core/) + [`jis`](https://pypi.org/project/jis-core/) (fail → snaft-rule + tibet-pol-rapport) · [`tibet-cbom`](https://pypi.org/project/tibet-cbom/) → · See `STACK.md` · See `demo/golden-path/` for the spine end-to-end.
+**Stack-positie:** Groep `evidence` · Bootstrap = OSAPI-handshake naar [`tibet`](https://pypi.org/project/tibet-core/) + [`jis`](https://pypi.org/project/jis-core/) (fail → snaft-rule + tibet-pol-rapport) · [`tibet-cbom`](https://pypi.org/project/tibet-cbom/) → · See [`STACK.md`](https://github.com/Humotica/.github/blob/main/STACK.md) · See `demo/golden-path/` for the spine end-to-end.
