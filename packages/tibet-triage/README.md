@@ -844,7 +844,7 @@ Designed by [Jasper van de Meent](https://github.com/jaspertvdm). Built by Jaspe
 
 ---
 
-**Stack-positie:** Groep `agentic` · Bootstrap = OSAPI-handshake naar [`tibet`](https://pypi.org/project/tibet-core/) + [`jis`](https://pypi.org/project/jis-core/) (fail → snaft-rule + tibet-pol-rapport) · ← [`ainternet`](https://pypi.org/project/ainternet/) (network it operates on) · [`tibet-phantom`](https://pypi.org/project/tibet-phantom/) → (state-continuity handoff) · See `STACK.md` · See `demo/golden-path/` for the spine end-to-end.
+**Stack-positie:** Groep `agentic` · Bootstrap = OSAPI-handshake naar [`tibet`](https://pypi.org/project/tibet-core/) + [`jis`](https://pypi.org/project/jis-core/) (fail → snaft-rule + tibet-pol-rapport) · ← [`ainternet`](https://pypi.org/project/ainternet/) (network it operates on) · [`tibet-phantom`](https://pypi.org/project/tibet-phantom/) → (state-continuity handoff) · See [`STACK.md`](https://github.com/Humotica/.github/blob/main/STACK.md) · See `demo/golden-path/` for the spine end-to-end.
 
 ---
 
