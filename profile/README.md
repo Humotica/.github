@@ -202,10 +202,12 @@ Read these in order:
 
 1. [`STACK.md`](https://github.com/Humotica/.github/blob/main/STACK.md) — canonical package map
 2. [`docs/stack-position-map.yml`](https://github.com/Humotica/.github/blob/main/docs/stack-position-map.yml) — every package's place in the chain
-3. [`packages/ainternet/README.md`](https://github.com/Humotica/.github/blob/main/packages/ainternet/README.md) — the agent-network layer
-4. [`packages/tibet-continuityd/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-continuityd/README.md) — the arrival daemon
-5. [`packages/tibet-triage/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-triage/README.md) — preflight + Airlock + UPIP
-6. [`packages/tibet-phantom/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-phantom/README.md) — session resume across machines
+3. [`packages/tibet-core/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-core/README.md) — provenance side of the OSAPI-pair
+4. [`packages/jis-core/README.md`](https://github.com/Humotica/.github/blob/main/packages/jis-core/README.md) — identity side of the OSAPI-pair
+5. [`packages/ainternet/README.md`](https://github.com/Humotica/.github/blob/main/packages/ainternet/README.md) — the agent-network layer
+6. [`packages/tibet-continuityd/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-continuityd/README.md) — the arrival daemon
+7. [`packages/tibet-triage/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-triage/README.md) — preflight + Airlock + UPIP
+8. [`packages/tibet-phantom/README.md`](https://github.com/Humotica/.github/blob/main/packages/tibet-phantom/README.md) — session resume across machines
 
 ### 🚀 If You Want To Run Something
 
