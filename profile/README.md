@@ -1,4 +1,4 @@
-<div align="center">
+ <div align="center">
 
 # Humotica
 
@@ -328,7 +328,7 @@ Humotica is **not a replacement** for SOC 2, ISO 27001, NIS2, DORA, IAM, SIEM, o
 - Trust-kernel **v1.2 snapshot engine as active gate** — snapshot becomes a *precondition* for risky actions, not a recovery-only store
 - **Cmail** as a real package, wired to AInternet
 - Crates.io publish round for the Rust substrate (`tibet-cortex-*`, `tibet-zip-*`, `snaft-core`, `tibet-store-mmu`, `tibet-dgx`)
-- W3C demo (`did:aint` + ParentAttest + age-verify-without-ID) for the June 17 milestone
+- W3C demo (`jis:aint` + ParentAttest + age-verify-without-ID) for the June 17 milestone
 
 ---
 
