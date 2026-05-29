@@ -161,7 +161,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 
 ## 🔧 Specialized (NEXT to the stack, not an AInternet component)
 
-- `oomllama` 1.0.0a1 — sovereign Rust inference engine + persona, separate line since Jan 2026 (OOML format, own quantization). Separate narrative/paper.
+- `oomllama` 1.0.0-alpha.2 · `tibet-oomllama` 0.1.0 — sovereign Rust inference engine + persona, separate line since Jan 2026 (OOML format, own quantization). Two parallel crate names; separate narrative/paper.
 
 ---
 
