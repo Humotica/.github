@@ -1,0 +1,425 @@
+# stack-position-map.yml — bron-van-waarheid voor de keten-positie van elk pakket.
+# Verbruikt door `docs/scripts/apply_stack_position.py` (Fase 3).
+#
+# Per pakket:
+#   <pkg_name>:
+#     group: substrate | evidence | agentic | safety | conformance | specialized
+#     prev: <pakket-naam>   (de logische voorganger in de keten, optioneel)
+#     next: <pakket-naam>   (de logische opvolger in de keten, optioneel)
+#
+# Discipline (Jasper):
+#  - de evidence-spine is linear: continuityd → cbom → sbom/ai-sbom → wayback → nis2 → report
+#  - substrate is een paar (tibet-core ↔ jis-core)
+#  - agentic is web-achtig; ainternet is de centrale hub
+#  - specialized (oomllama) staat NAAST de ainternet-stack, eigen tijdlijn
+
+# ════ SUBSTRATE — Rust/zero-trust onderlaag ════
+tibet-core:
+  group: substrate
+  next: jis-core      # parallel substraat
+jis-core:
+  group: substrate
+  prev: tibet-core
+did-jis-core:
+  group: substrate
+  prev: jis-core      # DEPRECATED — alle did-* benamingen
+
+# ════ EVIDENCE-SPINE — arrival → ... → report ════
+tibet-continuityd:
+  group: evidence
+  next: tibet-cbom    # arrival → CBOM
+tibet-cbom:
+  group: evidence
+  prev: tibet-continuityd
+  next: tibet-sbom
+tibet-sbom:
+  group: evidence
+  prev: tibet-cbom
+  next: tibet-ai-sbom
+tibet-ai-sbom:
+  group: evidence
+  prev: tibet-sbom
+  next: tibet-wayback
+ai-sbom:
+  group: evidence      # mooie korte naam (van ons), alias-rol naast tibet-ai-sbom
+  prev: tibet-sbom
+  next: tibet-wayback
+tibet-wayback:
+  group: evidence
+  prev: tibet-ai-sbom
+  next: tibet-nis2
+tibet-snap:
+  group: evidence      # DEPRECATED → tibet-wayback
+  prev: tibet-wayback
+tibet-nis2:
+  group: evidence
+  prev: tibet-wayback
+  next: tibet-report
+tibet-report:
+  group: evidence
+  prev: tibet-nis2
+tibet-trail:
+  group: evidence      # parallel: audit-trail reader / chain-tracing
+  prev: tibet-report
+tibet-audit:
+  group: evidence      # 120+ compliance checks, parallel naar report/trail
+  prev: tibet-nis2
+
+# ════ AGENTIC — runtime, messaging, execution, continuity ════
+ainternet:
+  group: agentic       # de hub: .aint naming, AINS, I-Poll
+  prev: jis-core
+  next: tibet-triage
+ipoll:
+  group: agentic       # messaging
+  prev: ainternet
+  next: tibet-triage
+tibet-ainternet-mcp:
+  group: agentic       # MCP-surface van AINS/I-Poll/Cortex
+  prev: ainternet
+tibet-triage:
+  group: agentic       # airlock/UPIP/fork/flare
+  prev: ainternet
+  next: tibet-phantom
+tibet-phantom:
+  group: agentic       # state-continuity, resume/fork
+  prev: tibet-triage
+  next: tibet-airlock
+tibet-phantom-mcp:
+  group: agentic
+  prev: tibet-phantom
+tibet-airlock:
+  group: agentic       # microVM execution-isolation cel
+  prev: tibet-phantom
+tibet-mux:
+  group: agentic       # multiplex/routing
+  prev: ainternet
+tibet-overlay:
+  group: agentic       # encrypted mesh / wireguard+noise
+  prev: tibet-mux
+tibet-cap-bus:
+  group: agentic       # command/event-substrate (gateway-event.v1)
+  prev: ainternet
+  next: tibet-triage
+tibet-gateway:
+  group: agentic       # sovereign proxy + TIBET-provenance
+  prev: ainternet
+  next: tibet-triage
+tibet-pol:
+  group: agentic       # proces-checksum/health (zelfbewijs)
+  prev: tibet-triage
+  next: tibet-report
+tibet-pol-mcp:
+  group: agentic
+  prev: tibet-pol
+tibet-ping:
+  group: agentic       # active probe/discovery/liveness
+  prev: ainternet
+  next: tibet-pol
+tibet-home-agent:
+  group: agentic       # niet-API-gebonden relay (Claude CLI / lokaal)
+  prev: ainternet
+tibet-cortex:
+  group: agentic       # permission-gates / zero-trust knowledge
+  prev: jis-core
+  next: tibet-triage
+tibet-triage-mcp:
+  group: agentic
+  prev: tibet-triage
+
+# ════ SAFETY / FIREWALL ════
+snaft:
+  group: safety        # semantic firewall, 22 OWASP-rules, NullRouteMux
+  prev: tibet-cap-bus
+  next: tibet-airlock
+tibet-snaft:
+  group: safety        # alias van snaft
+  prev: tibet-cap-bus
+inject-bender:
+  group: safety        # security comedy / inject-detection
+  prev: snaft
+
+# ════ CONFORMANCE — publieke toetsbaarheid (P0) ════
+tibet-conformance-vectors:
+  group: conformance   # 2.126 downloads = publieke "test the code"
+
+# ════ META / BUNDLE ════
+tibet:
+  group: substrate     # tibet[full] meta-bundle (v2.1 = optrekken naar volledige spine)
+  prev: tibet-core
+
+# ════ SPECIALIZED — eigen lijn, NIET ainternet-stack ════
+oomllama:
+  group: specialized   # sovereign Rust inference-engine + persona
+                       # eigen tijdlijn sinds jan 2026 (OOML magic bytes, eigen quantizatie)
+                       # zie reference_oomllama_engine memory
+
+
+# ════ EXTENSIONS via Codex (ipoll-TASK 95a87b9d, 28 mei) — ~70 packages ════
+# Bron: sandbox/ai/codex/stack-position-map-additions-2026-05-28.yml
+# ════ BRIDGES / MODEL ROUTING ════
+ollama-bridge:
+  group: agentic
+  prev: tibet-tools
+  next: tibet-llm-router
+openai-bridge:
+  group: agentic
+  prev: tibet-tools
+  next: tibet-llm-router
+gemini-bridge:
+  group: agentic
+  prev: tibet-tools
+  next: tibet-llm-router
+tibet-llm-router:
+  group: agentic
+  prev: ollama-bridge
+  next: tibet-gateway
+tibet-router:
+  group: agentic
+  prev: tibet-llm-router
+
+# ════ AGENT ROUTING / MEMORY / OPERATIONAL SURFACE ════
+aindex-diy:
+  group: agentic
+  prev: ainternet
+  next: kmbit-kernel
+kmbit-kernel:
+  group: agentic
+  prev: aindex-diy
+  next: kmbit-client
+kmbit-client:
+  group: agentic
+  prev: kmbit-kernel
+  next: tibet-workload
+idd-cli:
+  group: agentic
+  prev: ipoll
+  next: tibet-tools
+ai-network:
+  group: agentic
+  prev: ainternet
+humotica:
+  group: agentic
+  prev: tibet
+  next: ainternet
+rabel:
+  group: agentic
+  prev: ipoll
+  next: mcp-server-rabel
+tibet-context:
+  group: agentic
+  prev: tibet-phantom
+  next: tibet-cbom
+tibet-ipoll-mcp:
+  group: agentic
+  prev: ipoll
+  next: tibet-ainternet-mcp
+tibet-marketplace:
+  group: agentic
+  prev: tibet-ainternet-mcp
+  next: tibet-tools
+tibet-tools:
+  group: agentic
+  prev: tibet-marketplace
+tibet-tail:
+  group: agentic
+  prev: ainternet
+  next: tibet-trail
+
+# ════ MCP SURFACES ════
+mcp-server-aidrac:
+  group: specialized
+  prev: aidrac
+mcp-server-did-jis:
+  group: substrate
+  prev: mcp-server-jis
+mcp-server-inject-bender:
+  group: safety
+  prev: inject-bender
+mcp-server-jis:
+  group: agentic
+  prev: jis-core
+  next: ainternet
+mcp-server-rabel:
+  group: agentic
+  prev: rabel
+mcp-server-rapid-rag:
+  group: specialized
+  prev: rapid-rag
+mcp-server-sensory:
+  group: specialized
+  prev: sensory
+mcp-server-tibet:
+  group: agentic
+  prev: tibet-core
+  next: tibet-audit
+mcp-server-tibet-core:
+  group: agentic
+  prev: tibet-core
+  next: mcp-server-tibet
+mcp-server-tibet-forge:
+  group: safety
+  prev: tibet-forge
+
+# ════ SAFETY / POLICY / SECURITY SURFACES ════
+kit-pm:
+  group: safety
+  prev: tibet-triage
+  next: tibet-forge
+inject-bender:
+  group: safety
+  prev: snaft
+tibet-forge:
+  group: safety
+  prev: tibet-ci
+  next: tibet-ci-audit
+tibet-chip:
+  group: safety
+  prev: tibet-core
+  next: snaft
+tibet-anticheat:
+  group: safety
+  prev: tibet-chip
+tibet-claw:
+  group: safety
+  prev: tibet-triage
+  next: tibet-cap-bus
+tibet-sam:
+  group: safety
+  prev: tibet-keychain
+  next: tibet-gateway
+tibet-soc:
+  group: safety
+  prev: tibet-audit
+  next: tibet-report
+tibet-twin:
+  group: safety
+  prev: tibet-workload
+  next: tibet-pol
+
+# ════ IDENTITY / SECRET CUSTODY / SUBSTRATE ADAPTERS ════
+jis-iam-bridge:
+  group: substrate
+  prev: jis-core
+  next: tibet-spiffe
+tibet-spiffe:
+  group: substrate
+  prev: jis-core
+  next: tibet-workload
+tibet-vault:
+  group: substrate
+  prev: tibet-core
+  next: tibet-keychain
+tibet-keychain:
+  group: substrate
+  prev: tibet-vault
+  next: tibet-sam
+
+# ════ EVIDENCE / CI / SUPPLY CHAIN ════
+tibet-ci:
+  group: evidence
+  prev: tibet-sbom
+  next: tibet-forge
+tibet-ci-audit:
+  group: evidence
+  prev: tibet-ci
+  next: tibet-report
+tibet-db:
+  group: evidence
+  prev: tibet-core
+  next: tibet-cbom
+tibet-mirror:
+  group: evidence
+  prev: tibet-sbom
+  next: tibet-wayback
+tibet-workload:
+  group: evidence
+  prev: tibet-spiffe
+  next: tibet-cbom
+
+# ════ NETWORK / EDGE / OFF-GRID ════
+sensory:
+  group: specialized
+  prev: ipoll
+  next: reflux
+reflux:
+  group: specialized
+  prev: sensory
+  next: aidrac
+aidrac:
+  group: specialized
+  prev: reflux
+  next: mcp-server-aidrac
+tibet-iot:
+  group: agentic
+  prev: tibet-ping
+  next: tibet-edge
+tibet-edge:
+  group: agentic
+  prev: tibet-iot
+  next: tibet-mesh
+tibet-mesh:
+  group: agentic
+  prev: tibet-overlay
+  next: tibet-continuityd
+tibet-nc:
+  group: experimental
+  prev: tibet-airlock
+
+# ════ LOCAL AI / RAG / EDGE INFERENCE ════
+rapid-rag:
+  group: specialized
+  prev: tibet-context
+  next: mcp-server-rapid-rag
+tlex-edge:
+  group: specialized
+  prev: tibet-phantom
+  next: tibet-edge
+tibet-voice-cache:
+  group: specialized
+  prev: tibet-phantom
+  next: tibet-voice-cache-mcp
+tibet-voice-cache-mcp:
+  group: specialized
+  prev: tibet-voice-cache
+
+# ════ DOMAIN-SPECIFIC BRIDGES / LONG TAIL ════
+tibet-cobol:
+  group: specialized
+  prev: tibet-gateway
+  next: tibet-y2k38
+tibet-y2k38:
+  group: specialized
+  prev: tibet-cobol
+  next: tibet-pqc
+tibet-pqc:
+  group: specialized
+  prev: tibet-y2k38
+  next: tibet-gateway
+tibet-hermes:
+  group: specialized
+  prev: tibet-claw
+tibet-jawbreaker:
+  group: specialized
+  prev: tibet-ledger
+tibet-ledger:
+  group: specialized
+  prev: jis-core
+  next: tibet-jawbreaker
+sema-protocol:
+  group: specialized
+  prev: jis-core
+  next: ainternet
+
+# ════ KERN-SUBSTRATE additions (28 mei, Codex' consistency-pass) ════
+trust-kernel:
+  group: substrate
+  prev: tibet-core
+  next: tibet-store-mmu
+tibet-store-mmu:
+  group: substrate
+  prev: trust-kernel
+  next: tibet-zip
+tibet-zip:
+  group: substrate
+  prev: tibet-store-mmu
