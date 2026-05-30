@@ -73,7 +73,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | [`tibet-ping`](https://pypi.org/project/tibet-ping/) | **0.3.3** 🆕 | ✓ | active probe/discovery/liveness (≠ continuityd-heartbeat ≠ pol) |
 | [`tibet-ainternet-mcp`](https://pypi.org/project/tibet-ainternet-mcp/) | 0.5.7 | ✓ | AINS/I-Poll/Cortex MCP-surface |
 | [`ipoll`](https://pypi.org/project/ipoll/) | **0.2.5** 🆕 | — | AI-to-AI messaging + CLI with `--local` / `--ainternet` / `--brein` routing + friendly diagnostics + User-Agent for public WAFs |
-| [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) | **0.1.1** 🆕 | ✓ | Capsulated email + command hub. Light Mode (I-Poll + JSON envelope + sha256 hash + cap-bus `gateway-event.v1` audit-log). Sealed Mode (TBZ + continuityd) in 0.2.x |
+| [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) | **0.2.1** 🆕 | ✓ | Capsulated email — Light Mode (I-Poll + JSON + sha256 + cap-bus audit) + **Sealed Mode** (AES-256-GCM with AAD-bound from/to/message_id, optional `[sealed]` extra) |
 
 ## 4. Continuity & Arrival
 
