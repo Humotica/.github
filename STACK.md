@@ -72,7 +72,8 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | [`tibet-overlay`](https://pypi.org/project/tibet-overlay/) | 0.1.1 | ✓ | overlay-network |
 | [`tibet-ping`](https://pypi.org/project/tibet-ping/) | **0.3.3** 🆕 | ✓ | active probe/discovery/liveness (≠ continuityd-heartbeat ≠ pol) |
 | [`tibet-ainternet-mcp`](https://pypi.org/project/tibet-ainternet-mcp/) | 0.5.7 | ✓ | AINS/I-Poll/Cortex MCP-surface |
-| [`ipoll`](https://pypi.org/project/ipoll/) | **0.2.3** 🆕 | — | AI-to-AI messaging + CLI (status/inbox/pull/send) + friendly connection-refused diag + --public fallback |
+| [`ipoll`](https://pypi.org/project/ipoll/) | **0.2.5** 🆕 | — | AI-to-AI messaging + CLI with `--local` / `--ainternet` / `--brein` routing + friendly diagnostics + User-Agent for public WAFs |
+| [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) | **0.1.0** 🆕 | ✓ | Capsulated email + command hub. Light Mode (I-Poll transport, JSON envelope, sha256 hash). Sealed Mode (TBZ + continuityd) in 0.2.x |
 
 ## 4. Continuity & Arrival
 
