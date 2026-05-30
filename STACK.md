@@ -72,13 +72,13 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | [`tibet-overlay`](https://pypi.org/project/tibet-overlay/) | 0.1.1 | ✓ | overlay-network |
 | [`tibet-ping`](https://pypi.org/project/tibet-ping/) | **0.3.3** 🆕 | ✓ | active probe/discovery/liveness (≠ continuityd-heartbeat ≠ pol) |
 | [`tibet-ainternet-mcp`](https://pypi.org/project/tibet-ainternet-mcp/) | 0.5.7 | ✓ | AINS/I-Poll/Cortex MCP-surface |
-| [`ipoll`](https://pypi.org/project/ipoll/) | **0.2.2** 🆕 | — | AI-to-AI messaging + CLI entrypoint (status/inbox/pull/send) |
+| [`ipoll`](https://pypi.org/project/ipoll/) | **0.2.3** 🆕 | — | AI-to-AI messaging + CLI (status/inbox/pull/send) + friendly connection-refused diag + --public fallback |
 
 ## 4. Continuity & Arrival
 
 | Package | Versie | Tests | Rol |
 |---|---|---|---|
-| [`tibet-continuityd`](https://pypi.org/project/tibet-continuityd/) | **0.6.15** 🆕 | ✓ | **resident trust/arrival-daemon — month-anchor, central** (tibet-drop + cbor2 now base deps) |
+| [`tibet-continuityd`](https://pypi.org/project/tibet-continuityd/) | **0.6.16** 🆕 | ✓ | **resident trust/arrival-daemon — month-anchor, central** (tibet-drop + cbor2 base deps + __version__ sync) |
 | [`tibet-phantom`](https://pypi.org/project/tibet-phantom/) | 0.2.1 | ✓ | sealed-state resume/fork (state-continuity; VM-enhancement on roadmap) |
 | [`tibet-home-agent`](https://pypi.org/project/tibet-home-agent/) | **0.4.1** 🆕 | ✓ | not-API-bound relay (Claude CLI / local model) |
 
