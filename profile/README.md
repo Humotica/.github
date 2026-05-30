@@ -159,8 +159,9 @@ Core packages:
 - [`tibet-phantom`](https://pypi.org/project/tibet-phantom/) — sealed session resume/fork
 - [`tibet-pol`](https://pypi.org/project/tibet-pol/) — process health and checksum monitoring
 - [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) — command/event substrate (`gateway-event.v1` contract)
+- [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) — capsulated email (Light Mode 0.1.0; Sealed Mode 0.2.x in flight)
 
-### 4. Cmail *(in flight)*
+### 4. Cmail *(LIVE — 0.1.0 Light Mode)*
 
 Cmail is the planned human-readable inbox for the stack. It is "email", but for sealed continuity objects:
 
@@ -172,7 +173,7 @@ A cmail can carry a **sealed session**, a **fork token**, an **identity-bound dr
 
 The idea is simple for users: *send a message*. The system handles identity, consent, provenance, triage, and continuity underneath.
 
-> 📦 **Current status**: the 8 canonical cmail-events (`message.sent` / `command.sent` / `message.received` / `command.approved` / `command.rejected` / `resume.requested` / `resume.completed` / `trace.opened`) already exist as `gateway-event.v1`-validated fixtures in [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) `0.1.2`. The package itself is in flight.
+> 📦 **Current status (2026-05-30)**: [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) `0.1.0` is now **live on PyPI** as Light Mode capsulated email. The 8 canonical cmail-events (`message.sent` / `command.sent` / `message.received` / `command.approved` / `command.rejected` / `resume.requested` / `resume.completed` / `trace.opened`) ship as `gateway-event.v1`-validated fixtures in [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) `0.1.3`. First live cmails were sent end-to-end through the keten on launch day. Sealed Mode (TBZ + tibet-continuityd) lands in 0.2.x.
 
 ---
 
@@ -317,19 +318,19 @@ Humotica is **not a replacement** for SOC 2, ISO 27001, NIS2, DORA, IAM, SIEM, o
 - `STACK.md` + ~110 README stack-position callouts across the package tree
 - [`tibet`](https://pypi.org/project/tibet/) `2.1.2` — guided system installer (`tibet system doctor/init/walkthrough`)
 - OSAPI v1.0 bootstrap-pair live: [`tibet-core`](https://pypi.org/project/tibet-core/) `0.5.0b2` + [`jis-core`](https://pypi.org/project/jis-core/) `0.4.0b1` (78+ tests green)
-- [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) `0.1.2` — `gateway-event.v1` frozen + OSAPI ↔ cap-bus bridge + 8 cmail-event fixtures
+- [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) `0.1.3` — `gateway-event.v1` frozen + `airlock_runtime_verdict.v1` contract + `verdict_transitions` posture-event builder + 8 cmail-event fixtures
 - [`tibet-conformance-vectors`](https://pypi.org/project/tibet-conformance-vectors/) `0.2.2` — promoted to core public verification
 - `tibet-snap` moved to legacy; [`tibet-wayback`](https://pypi.org/project/tibet-wayback/) is canonical snapshot
 - [`tibet-audit`](https://pypi.org/project/tibet-audit/) `0.25.0` — first-mover for the "depend on tibet-core + jis-core" discipline
-- 17 PyPI releases in the May 2026 consolidation round
+- 25+ PyPI releases in the May 2026 round — immune-switch keten complete, cmail live, ipoll + continuityd polished
 
 ### 🔜 Next
 
 - Trust-kernel **v1.0.1-alpha** — hygiene + binary rename (`tibet-trust-kerneld`, never shadows Python `tibet`)
 - Trust-kernel **v1.1 OSAPI adapter** — Rust daemon talks LDJSON on 18443/18444; Python clients hand off transparently
 - Trust-kernel **v1.2 snapshot engine as active gate** — snapshot becomes a *precondition* for risky actions, not a recovery-only store
-- **Cmail** as a real package, wired to AInternet
 - Crates.io publish round for the Rust substrate (`tibet-cortex-*`, `tibet-zip-*`, `snaft-core`, `tibet-store-mmu`, `tibet-dgx`)
+- **Cmail Sealed Mode** ([`tibet-cmail`](https://pypi.org/project/tibet-cmail/) `0.2.x`) — TBZ packing + tibet-continuityd inbox routing + SAM-binding for non-AI recipients
 - W3C demo (`jis:aint` + ParentAttest + age-verify-without-ID)
 
 ---
