@@ -48,7 +48,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | Package | Versie | Tests | Rol |
 |---|---|---|---|
 | [`tibet-core`](https://pypi.org/project/tibet-core/) | **0.5.0b2** 🆕 | ✓ | TIBET-tokens, provenance-chain, OSAPI-binding base |
-| [`tibet-audit`](https://pypi.org/project/tibet-audit/) | **0.26.1** 🆕 | ✓ | audit cockpit + 7 evidence-adapters + posture-awareness + readiness lanes + cmail-display fallback chain — Codex Pass 1 production-merge |
+| [`tibet-audit`](https://pypi.org/project/tibet-audit/) | **0.26.2** 🆕 | ✓ | audit cockpit + 7 evidence-adapters + posture-awareness + readiness lanes + cmail-display fallback chain — Codex Pass 1 production-merge |
 | [`tibet`](https://pypi.org/project/tibet/) (meta) | **2.1.2** 🆕 | — | guided system installer (`tibet system doctor/init/walkthrough`); `tibet[full]` = 38 packages |
 
 *Crates:* `tibet-zip-core` 2.2.0 (sealed-object substraat).
@@ -100,7 +100,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | Package | Versie | Tests | Rol / focus |
 |---|---|---|---|
 | [`tibet-nis2`](https://pypi.org/project/tibet-nis2/) | 0.1.0 | ✗ | NIS2 Art. 21(2) — **thin: TESTS + evidence-ingest (sbom/cbom/wayback/pol/ping/trail) NEEDED (P1)** |
-| [`tibet-audit`](https://pypi.org/project/tibet-audit/) | 0.26.1 | ✓ | (see kernel) audit cockpit + evidence-adapters + posture-awareness |
+| [`tibet-audit`](https://pypi.org/project/tibet-audit/) | 0.26.2 | ✓ | (see kernel) audit cockpit + evidence-adapters + posture-awareness |
 
 ## 7. Runtime / Execution & Health
 
