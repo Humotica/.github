@@ -48,7 +48,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | Package | Versie | Tests | Rol |
 |---|---|---|---|
 | [`tibet-core`](https://pypi.org/project/tibet-core/) | **0.5.0b2** 🆕 | ✓ | TIBET-tokens, provenance-chain, OSAPI-binding base |
-| [`tibet-audit`](https://pypi.org/project/tibet-audit/) | **0.26.0** 🆕 | ✓ | audit cockpit + 7 evidence-adapters (continuityd/cap-bus/snaft/pol/gateway/cmail/cortex) + posture-awareness + readiness lanes — Codex Pass 1 production-merge |
+| [`tibet-audit`](https://pypi.org/project/tibet-audit/) | **0.26.1** 🆕 | ✓ | audit cockpit + 7 evidence-adapters + posture-awareness + readiness lanes + cmail-display fallback chain — Codex Pass 1 production-merge |
 | [`tibet`](https://pypi.org/project/tibet/) (meta) | **2.1.2** 🆕 | — | guided system installer (`tibet system doctor/init/walkthrough`); `tibet[full]` = 38 packages |
 
 *Crates:* `tibet-zip-core` 2.2.0 (sealed-object substraat).
@@ -73,7 +73,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | [`tibet-ping`](https://pypi.org/project/tibet-ping/) | **0.3.3** 🆕 | ✓ | active probe/discovery/liveness (≠ continuityd-heartbeat ≠ pol) |
 | [`tibet-ainternet-mcp`](https://pypi.org/project/tibet-ainternet-mcp/) | 0.5.7 | ✓ | AINS/I-Poll/Cortex MCP-surface |
 | [`ipoll`](https://pypi.org/project/ipoll/) | **0.2.5** 🆕 | — | AI-to-AI messaging + CLI with `--local` / `--ainternet` / `--brein` routing + friendly diagnostics + User-Agent for public WAFs |
-| [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) | **0.2.4** 🆕 | ✓ | Capsulated email — Light + Sealed + TimeoutError diag + cap-bus runtime POST + **adapter-friendly top-level `kind` + `sealed` fields** (tibet-audit CmailAdapter koppeling) |
+| [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) | **0.2.5** 🆕 | ✓ | Capsulated email — Light + Sealed + TimeoutError diag + cap-bus runtime POST + adapter-friendly top-level `kind` + `sealed` + **`subject` + `message_type`** (tibet-audit cockpit display) |
 
 ## 4. Continuity & Arrival
 
@@ -100,7 +100,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | Package | Versie | Tests | Rol / focus |
 |---|---|---|---|
 | [`tibet-nis2`](https://pypi.org/project/tibet-nis2/) | 0.1.0 | ✗ | NIS2 Art. 21(2) — **thin: TESTS + evidence-ingest (sbom/cbom/wayback/pol/ping/trail) NEEDED (P1)** |
-| [`tibet-audit`](https://pypi.org/project/tibet-audit/) | 0.26.0 | ✓ | (see kernel) audit cockpit + evidence-adapters + posture-awareness |
+| [`tibet-audit`](https://pypi.org/project/tibet-audit/) | 0.26.1 | ✓ | (see kernel) audit cockpit + evidence-adapters + posture-awareness |
 
 ## 7. Runtime / Execution & Health
 
