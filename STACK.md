@@ -108,7 +108,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 |---|---|---|---|
 | [`tibet-triage`](https://pypi.org/project/tibet-triage/) | 0.5.1 | ✓ | airlock-exec/UPIP/fork/flare — preflight + execution-isolation |
 | [`tibet-airlock`](https://pypi.org/project/tibet-airlock/) | **0.3.0** 🆕 | ✓ | Python operator-surface + posture enforcer (raises AirlockPostureDenied before I/O) |
-| [`tibet-genesis`](https://pypi.org/project/tibet-genesis/) | **0.1.1** 🆕 | ✓ | **T-1 Genesis pass** — pre-grant airlock (self-FIR/A op hardware claim) + re-attestation event bij vervuiling (closes Mahipal M4) |
+| [`tibet-genesis`](https://pypi.org/project/tibet-genesis/) | **0.1.2** 🆕 | ✓ | **T-1 Genesis pass** — pre-grant orchestration boven/naast TAT-laag. Dirty verdict emits TAT envelope (`intent=request_re_attestation`) met magic + 4-dot SSM dispatch surface + canonical candidate_hash. Closes Mahipal M4. |
 | [`tibet-gateway`](https://pypi.org/project/tibet-gateway/) | 0.4.0 | ✓ | sovereign proxy + TIBET-provenance |
 | [`tibet-pol`](https://pypi.org/project/tibet-pol/) | **0.3.3** 🆕 | ✓ | process-checksum/health + airlock-runtime observer (verdict.v1 emit-side) |
 | [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) | **0.1.3** 🆕 | ✓ | command/event-substrate — `gateway-event.v1` **frozen** ✅ + `airlock_runtime_verdict.v1` contract + `verdict_transitions` posture-event builder |
