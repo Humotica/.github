@@ -16,7 +16,7 @@
 > **Conventions** — `tests✓` = test-suite present (verified). Maturity ladder: **kernel** > beta > alpha > sandbox > deprecated/alias.
 > **Python = operator/integration surface. Rust crates = zero-trust substraat eronder.** Where names differ, `tibet-*` is canonical; `tbz-*` / `cortex-*` are compatibility aliases.
 
-📖 See also: [`README.md`](./README.md) (landing) · `docs/stack-position-map.yml` (every package's place in the chain — in the main monorepo) · `docs/specs/osapi-protocol-v1.md` (OSAPI v1.0 wire-spec — in the main monorepo)
+📖 See also: [`README.md`](./README.md) (landing) · `docs/stack-position-map.yml` (every package's place in the chain — in the main monorepo) · `docs/specs/osapi-protocol-v1.md` (OSAPI v1.1 wire-spec — in the main monorepo)
 
 ---
 
@@ -145,7 +145,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 |---|---|---|---|
 | Sealed-object | `tibet-zip-*` 2.2.0 | `tbz-*` | block-format / JIS-binding / airlock / mirror |
 | Zero-trust knowledge | `tibet-cortex-*` 0.3.0 | `cortex-*` 0.2.0 **(yanked 2026-05-29)** | core / jis / store / airlock / audit / cli |
-| Runtime / memory | [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel) **1.0.0-alpha.4** 🆕 · [`tibet-airlock-kernel`](https://crates.io/crates/tibet-airlock-kernel) 0.2.0 · [`tibet-store-mmu`](https://crates.io/crates/tibet-store-mmu) 0.1.0 · [`tibet-dgx`](https://crates.io/crates/tibet-dgx) 0.2.0 · [`tibet-iddrop`](https://crates.io/crates/tibet-iddrop) **0.3.0** 🆕 · [`tibet-core`](https://crates.io/crates/tibet-core) **0.1.1** 🆕 (Rust kant) | — | encrypted-RAM / MMU / QUIC / OSAPI v1.1 (below-public-API) · airlock-kernel = bolle execution layer beneath PyPI `tibet-airlock` operator · iddrop = identity-bound capability transfer (JTm/KIT) · tibet-core Rust = bolle api kant van Python's tibet-core |
+| Runtime / memory | [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel) **1.0.0-alpha.4** 🆕 · [`tibet-airlock-kernel`](https://crates.io/crates/tibet-airlock-kernel) 0.2.0 · [`tibet-store-mmu`](https://crates.io/crates/tibet-store-mmu) 0.1.0 · [`tibet-dgx`](https://crates.io/crates/tibet-dgx) 0.2.0 · [`tibet-iddrop`](https://crates.io/crates/tibet-iddrop) **0.3.0** 🆕 · [`tibet-core`](https://crates.io/crates/tibet-core) **0.1.3** 🆕 (Rust kant) | — | encrypted-RAM / MMU / QUIC / OSAPI v1.1 (below-public-API) · airlock-kernel = bolle execution layer beneath PyPI `tibet-airlock` operator · iddrop = identity-bound capability transfer (JTm/KIT) · tibet-core Rust = bolle api kant van Python's tibet-core |
 | Identity (Rust) | `jis-core` 0.4.0-beta.1 (synced with PyPI v0.4.0b1) · `snaft-core` 0.3.1 | — | Ed25519 identity-kernel · Rust backend van Python `snaft` |
 
 `tibet-trust-kerneld` (the daemon built from `tibet-trust-kernel`) is the **production hardened runtime** — the bolle api beneath the Python platte api. See above (trust-kernel crate link).
@@ -158,7 +158,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 - All `did-*` names (`did-jis-core` etc.) = **deprecated**.
 - `tibet-*` = canonical · `tbz-*` / `cortex-*` = compat aliases (see Rust-crates table).
 - **Trust-kernel binary**: `tibet-trust-kerneld` — **never** `tibet` (that name belongs to the Python meta-installer).
-- **Bootstrap-discipline**: every touched package depends on `tibet-core` + `jis-core` and bootstraps to both OSAPI's at init. [`tibet-audit`](https://pypi.org/project/tibet-audit/) `0.25.0` is the first-mover.
+- **Bootstrap-discipline**: every package depends on `tibet-core` + `jis-core` and bootstraps to both OSAPI's at init. **As of 31 mei the bootstrap-PAIR is declared in 39 packages** (bulk-rollout: jis-core added to the 35 that already had tibet-core — the pair was half-built, jis-core was in only 4). Both deps = inside the substrate; one = free-floating tooling. Exclusions: `tibet-core` + `jis-core` themselves (peers, not consumers of each other).
 
 ---
 
