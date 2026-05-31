@@ -73,7 +73,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | [`tibet-ping`](https://pypi.org/project/tibet-ping/) | **0.3.3** 🆕 | ✓ | active probe/discovery/liveness (≠ continuityd-heartbeat ≠ pol) |
 | [`tibet-ainternet-mcp`](https://pypi.org/project/tibet-ainternet-mcp/) | 0.5.7 | ✓ | AINS/I-Poll/Cortex MCP-surface |
 | [`ipoll`](https://pypi.org/project/ipoll/) | **0.2.5** 🆕 | — | AI-to-AI messaging + CLI with `--local` / `--ainternet` / `--brein` routing + friendly diagnostics + User-Agent for public WAFs |
-| [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) | **0.2.5** 🆕 | ✓ | Capsulated email — Light + Sealed + TimeoutError diag + cap-bus runtime POST + adapter-friendly top-level `kind` + `sealed` + **`subject` + `message_type`** (tibet-audit cockpit display) |
+| [`tibet-cmail`](https://pypi.org/project/tibet-cmail/) | **0.3.0** 🆕 | ✓ | Capsulated email — Light + Sealed + audit + cap-bus POST + **autonomous posture-cmail** (`tibet-cmail posture-watch` → cmail per verdict.v1 transitie naar operator) + bootstrap-or-die deps (tibet-core + jis-core) |
 
 ## 4. Continuity & Arrival
 
