@@ -24,7 +24,7 @@ tibet system doctor
 tibet system walkthrough
 ```
 
-> 💡 That installs the guided system installer (`tibet 2.1.2`). `tibet system doctor` reports which of the 38 trust-system packages are live and which need init; `tibet system walkthrough` opens a step-by-step path through identity, evidence, and agent setup.
+> 💡 That installs the guided system installer (`tibet 2.1.3`). `tibet system doctor` reports which of the 40+ trust-system packages are live and which need init; `tibet system walkthrough` opens a step-by-step path through identity, evidence, and agent setup.
 
 Bootstrap a package to the OSAPI-pair in two lines:
 
@@ -90,7 +90,7 @@ The stack has three main flows:
 | Bindings (Python, replaceable) | [`tibet-core`](https://pypi.org/project/tibet-core/) `0.5.0b2` | 18443 | `bootstrap()`, `emit`, `query`, `fork` |
 | Bindings (Python, replaceable) | [`jis-core`](https://pypi.org/project/jis-core/) `0.4.0b1` | 18444 | `bootstrap()`, `claim`, `bind`, `fira` |
 | Protocol (immutable spec) | LDJSON over UDS/TCP | — | HELLO / WELCOME / ACK + OP |
-| Runtime (Rust, hardened) | `tibet-trust-kerneld` *(v1.0.1-alpha, in flight)* | 4430 (MUX) | Voorproever · Archivaris · Watchdog |
+| Runtime (Rust, hardened) | [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel) `1.0.0-alpha.4` (Pixel 10 hardware test passed) | 4430 (MUX) · 18443/18444 (OSAPI v1.1, opt-in) | Voorproever · Archivaris · Watchdog · Bifurcation · **OSAPI v1.1 adapter** (TAT envelope ingest + biometric vehicle dispatch) |
 
 Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers for dev/test. Production is fail-closed.
 
@@ -316,7 +316,7 @@ Humotica is **not a replacement** for SOC 2, ISO 27001, NIS2, DORA, IAM, SIEM, o
 ### ✅ Just shipped (May 2026)
 
 - `STACK.md` + ~110 README stack-position callouts across the package tree
-- [`tibet`](https://pypi.org/project/tibet/) `2.1.2` — guided system installer (`tibet system doctor/init/walkthrough`)
+- [`tibet`](https://pypi.org/project/tibet/) `2.1.3` — guided system installer (`tibet system doctor/init/walkthrough`) — now includes tibet-genesis (T-1 pre-grant) + tibet-cmail (visible audit inbox)
 - OSAPI v1.0 bootstrap-pair live: [`tibet-core`](https://pypi.org/project/tibet-core/) `0.5.0b2` + [`jis-core`](https://pypi.org/project/jis-core/) `0.4.0b1` (78+ tests green)
 - [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) `0.1.3` — `gateway-event.v1` frozen + `airlock_runtime_verdict.v1` contract + `verdict_transitions` posture-event builder + 8 cmail-event fixtures
 - [`tibet-conformance-vectors`](https://pypi.org/project/tibet-conformance-vectors/) `0.2.2` — promoted to core public verification
