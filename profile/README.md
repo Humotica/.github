@@ -191,7 +191,7 @@ Think of this repository as a set of labeled boxes.
 | 🔧 **Specialized Modules** | Domain adapters and edge cases | [`tibet-cobol`](https://pypi.org/project/tibet-cobol/), [`tibet-pqc`](https://pypi.org/project/tibet-pqc/), [`tibet-y2k38`](https://pypi.org/project/tibet-y2k38/), [`sensory`](https://pypi.org/project/sensory/), [`rapid-rag`](https://pypi.org/project/rapid-rag/), `oomllama` |
 | ✅ **Conformance** | Test vectors and public verification | [`tibet-conformance-vectors`](https://pypi.org/project/tibet-conformance-vectors/) |
 
-See [`STACK.md`](https://github.com/Humotica/.github/blob/main/STACK.md) for the canonical package map (114 packages, 110 with stack-position-footer).
+See [`STACK.md`](https://github.com/Humotica/.github/blob/main/STACK.md) for the canonical package map (~105 canonical packages; every published package now has a source repo in the org).
 
 ---
 
