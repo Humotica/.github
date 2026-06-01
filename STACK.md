@@ -9,14 +9,14 @@
 [![PyPI - jis-core](https://img.shields.io/pypi/v/jis-core?label=jis-core&color=blue)](https://pypi.org/project/jis-core/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-*Last updated 2026-05-29 · 114 packages · 17 freshly published (May 2026 round)*
+*Last updated 2026-06-01 · ~105 canonical packages · Humotica org now complete (mirror + home pass: every published package has a source repo in the org)*
 
 </div>
 
 > **Conventions** — `tests✓` = test-suite present (verified). Maturity ladder: **kernel** > beta > alpha > sandbox > deprecated/alias.
 > **Python = operator/integration surface. Rust crates = zero-trust substraat eronder.** Where names differ, `tibet-*` is canonical; `tbz-*` / `cortex-*` are compatibility aliases.
 
-📖 See also: [`README.md`](./README.md) (landing) · `docs/stack-position-map.yml` · `docs/specs/osapi-protocol-v1.md` (OSAPI v1.2 wire-spec — in the main monorepo)
+📖 See also: [`README.md`](./README.md) (landing) · `docs/stack-position-map.yml` · `docs/specs/osapi-protocol-v1.md` (OSAPI v1.2 — in main monorepo)
 
 ---
 
@@ -49,7 +49,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 |---|---|---|---|
 | [`tibet-core`](https://pypi.org/project/tibet-core/) | **0.5.0b2** 🆕 | ✓ | TIBET-tokens, provenance-chain, OSAPI-binding base |
 | [`tibet-audit`](https://pypi.org/project/tibet-audit/) | **0.27.0** 🆕 | ✓ | audit cockpit + 7 evidence-adapters + posture-awareness + readiness lanes + cmail-display fallback chain + **`tibet-audit genesis` subcommand** (reads tibet-genesis JSONL records for ready/blocked/attention/observed/absent assessment) — Codex Pass 1 production-merge |
-| [`tibet`](https://pypi.org/project/tibet/) (meta) | **2.1.2** 🆕 | — | guided system installer (`tibet system doctor/init/walkthrough`); `tibet[full]` = 38 packages |
+| [`tibet`](https://pypi.org/project/tibet/) (meta) | **2.1.3** 🆕 | — | guided system installer (`tibet system doctor/init/walkthrough`); `tibet[full]` = 40+ packages (+genesis +cmail) |
 
 *Crates:* `tibet-zip-core` 2.2.0 (sealed-object substraat).
 
@@ -109,6 +109,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | [`tibet-triage`](https://pypi.org/project/tibet-triage/) | 0.5.1 | ✓ | airlock-exec/UPIP/fork/flare — preflight + execution-isolation |
 | [`tibet-airlock`](https://pypi.org/project/tibet-airlock/) | **0.3.0** 🆕 | ✓ | Python operator-surface + posture enforcer (raises AirlockPostureDenied before I/O) |
 | [`tibet-genesis`](https://pypi.org/project/tibet-genesis/) | **0.1.2** 🆕 | ✓ | **T-1 Genesis pass** — pre-grant orchestration boven/naast TAT-laag. Dirty verdict emits TAT envelope (`intent=request_re_attestation`) met magic + 4-dot SSM dispatch surface + canonical candidate_hash. Closes Mahipal M4. |
+| [`tibet-timevector`](https://pypi.org/project/tibet-timevector/) | **0.1.0** 🆕 | ✓ | **Causal TimeVector** — Mattern/Fidge vector clocks (happened-before/concurrent across JIS lanes, wat Lamport niet kan) + **CausalGuard**: weigert causaal-spontane acties ("geen geldige voorganger = causaal onmogelijk") = sleeper-agent/DETONATE defense |
 | [`tibet-gateway`](https://pypi.org/project/tibet-gateway/) | 0.4.0 | ✓ | sovereign proxy + TIBET-provenance |
 | [`tibet-pol`](https://pypi.org/project/tibet-pol/) | **0.3.3** 🆕 | ✓ | process-checksum/health + airlock-runtime observer (verdict.v1 emit-side) |
 | [`tibet-cap-bus`](https://pypi.org/project/tibet-cap-bus/) | **0.1.3** 🆕 | ✓ | command/event-substrate — `gateway-event.v1` **frozen** ✅ + `airlock_runtime_verdict.v1` contract + `verdict_transitions` posture-event builder |
@@ -148,7 +149,7 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 | Runtime / memory | [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel) **1.0.0-alpha.5** 🆕 (snapshot ACTIVE GATE + OSAPI v1.2 mux) · [`tibet-airlock-kernel`](https://crates.io/crates/tibet-airlock-kernel) 0.2.0 · [`tibet-store-mmu`](https://crates.io/crates/tibet-store-mmu) 0.1.0 · [`tibet-dgx`](https://crates.io/crates/tibet-dgx) 0.2.0 · [`tibet-iddrop`](https://crates.io/crates/tibet-iddrop) **0.3.0** 🆕 · [`tibet-core`](https://crates.io/crates/tibet-core) **0.1.3** 🆕 (Rust kant) | — | encrypted-RAM / MMU / QUIC / OSAPI v1.1 (below-public-API) · airlock-kernel = bolle execution layer beneath PyPI `tibet-airlock` operator · iddrop = identity-bound capability transfer (JTm/KIT) · tibet-core Rust = bolle api kant van Python's tibet-core |
 | Identity (Rust) | `jis-core` 0.4.0-beta.1 (synced with PyPI v0.4.0b1) · `snaft-core` 0.3.1 | — | Ed25519 identity-kernel · Rust backend van Python `snaft` |
 
-`tibet-trust-kerneld` (the daemon built from `tibet-trust-kernel`) is the **production hardened runtime** — the bolle api beneath the Python platte api. See the tibet-trust-kernel crate README on crates.io.
+`tibet-trust-kerneld` (the daemon built from `tibet-trust-kernel`) is the **production hardened runtime** — the bolle api beneath the Python platte api. See the tibet-trust-kernel crate on crates.io.
 
 ---
 
