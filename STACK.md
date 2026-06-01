@@ -16,7 +16,7 @@
 > **Conventions** — `tests✓` = test-suite present (verified). Maturity ladder: **kernel** > beta > alpha > sandbox > deprecated/alias.
 > **Python = operator/integration surface. Rust crates = zero-trust substraat eronder.** Where names differ, `tibet-*` is canonical; `tbz-*` / `cortex-*` are compatibility aliases.
 
-📖 See also: [`README.md`](./README.md) (landing) · `docs/stack-position-map.yml` (every package's place in the chain — in the main monorepo) · `docs/specs/osapi-protocol-v1.md` (OSAPI v1.1 wire-spec — in the main monorepo)
+📖 See also: [`README.md`](./README.md) (landing) · `docs/stack-position-map.yml` · `docs/specs/osapi-protocol-v1.md` (OSAPI v1.2 wire-spec — in the main monorepo)
 
 ---
 
@@ -37,7 +37,7 @@
 | Bindings (Python, replaceable) | [`tibet-core`](https://pypi.org/project/tibet-core/) `0.5.0b2` | 18443 | `bootstrap()`, `emit`, `query`, `fork` |
 | Bindings (Python, replaceable) | [`jis-core`](https://pypi.org/project/jis-core/) `0.4.0b1` | 18444 | `bootstrap()`, `claim`, `bind`, `fira` |
 | Protocol (immutable spec) | LDJSON over UDS/TCP | — | HELLO / WELCOME / ACK + OP |
-| Runtime (Rust, hardened) | [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel) `1.0.0-alpha.4` 🆕 | 4430 (MUX) · 18443/18444 (OSAPI v1.1, opt-in) | Voorproever · Archivaris · Watchdog · Bifurcation · **OSAPI v1.1 adapter** (TCP/LDJSON: verdict.v1 ingest + TAT envelope ingest met biometric vehicle dispatch) |
+| Runtime (Rust, hardened) | [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel) `1.0.0-alpha.5` 🆕 | 4430 (MUX) · 18443/18444 (OSAPI v1.1) · 1-port mux (v1.2) | Voorproever · Archivaris · Watchdog · Bifurcation · **OSAPI v1.1 adapter** (verdict.v1 + TAT ingest + biometric vehicle dispatch) · **v1.2: snapshot ACTIVE GATE** (precondition-for-risk, no-fail-open) + **single-port MUX** (SSM-surface routing) |
 
 Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers for dev/test. Production is fail-closed.
 
@@ -145,10 +145,10 @@ Soft-bootstrap (`TIBET_SOFT_BOOTSTRAP=1`) degrades both to ephemeral providers f
 |---|---|---|---|
 | Sealed-object | `tibet-zip-*` 2.2.0 | `tbz-*` | block-format / JIS-binding / airlock / mirror |
 | Zero-trust knowledge | `tibet-cortex-*` 0.3.0 | `cortex-*` 0.2.0 **(yanked 2026-05-29)** | core / jis / store / airlock / audit / cli |
-| Runtime / memory | [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel) **1.0.0-alpha.4** 🆕 · [`tibet-airlock-kernel`](https://crates.io/crates/tibet-airlock-kernel) 0.2.0 · [`tibet-store-mmu`](https://crates.io/crates/tibet-store-mmu) 0.1.0 · [`tibet-dgx`](https://crates.io/crates/tibet-dgx) 0.2.0 · [`tibet-iddrop`](https://crates.io/crates/tibet-iddrop) **0.3.0** 🆕 · [`tibet-core`](https://crates.io/crates/tibet-core) **0.1.3** 🆕 (Rust kant) | — | encrypted-RAM / MMU / QUIC / OSAPI v1.1 (below-public-API) · airlock-kernel = bolle execution layer beneath PyPI `tibet-airlock` operator · iddrop = identity-bound capability transfer (JTm/KIT) · tibet-core Rust = bolle api kant van Python's tibet-core |
+| Runtime / memory | [`tibet-trust-kernel`](https://crates.io/crates/tibet-trust-kernel) **1.0.0-alpha.5** 🆕 (snapshot ACTIVE GATE + OSAPI v1.2 mux) · [`tibet-airlock-kernel`](https://crates.io/crates/tibet-airlock-kernel) 0.2.0 · [`tibet-store-mmu`](https://crates.io/crates/tibet-store-mmu) 0.1.0 · [`tibet-dgx`](https://crates.io/crates/tibet-dgx) 0.2.0 · [`tibet-iddrop`](https://crates.io/crates/tibet-iddrop) **0.3.0** 🆕 · [`tibet-core`](https://crates.io/crates/tibet-core) **0.1.3** 🆕 (Rust kant) | — | encrypted-RAM / MMU / QUIC / OSAPI v1.1 (below-public-API) · airlock-kernel = bolle execution layer beneath PyPI `tibet-airlock` operator · iddrop = identity-bound capability transfer (JTm/KIT) · tibet-core Rust = bolle api kant van Python's tibet-core |
 | Identity (Rust) | `jis-core` 0.4.0-beta.1 (synced with PyPI v0.4.0b1) · `snaft-core` 0.3.1 | — | Ed25519 identity-kernel · Rust backend van Python `snaft` |
 
-`tibet-trust-kerneld` (the daemon built from `tibet-trust-kernel`) is the **production hardened runtime** — the bolle api beneath the Python platte api. See above (trust-kernel crate link).
+`tibet-trust-kerneld` (the daemon built from `tibet-trust-kernel`) is the **production hardened runtime** — the bolle api beneath the Python platte api. See the tibet-trust-kernel crate README on crates.io.
 
 ---
 
