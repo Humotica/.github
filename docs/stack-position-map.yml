@@ -23,6 +23,9 @@ jis-core:
 did-jis-core:
   group: substrate
   prev: jis-core      # DEPRECATED — alle did-* benamingen
+tibet-timevector:
+  group: substrate    # Causal TimeVector (Mattern/Fidge) — causality-flex BOVEN Lamport + CausalGuard (spontane-intentie = causaal onmogelijk)
+  prev: jis-core
 
 # ════ EVIDENCE-SPINE — arrival → ... → report ════
 tibet-continuityd:
@@ -138,6 +141,9 @@ tibet-snaft:
 inject-bender:
   group: safety        # security comedy / inject-detection
   prev: snaft
+tibet-genesis:
+  group: safety        # T-1 Genesis pre-grant orchestration (capture→dual-verify→diff→mint t0); closes Mahipal M4 pre-grant gap; emits request_re_attestation TAT
+  prev: tibet-airlock
 
 # ════ CONFORMANCE — publieke toetsbaarheid (P0) ════
 tibet-conformance-vectors:
